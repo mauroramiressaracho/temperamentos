@@ -1,50 +1,119 @@
-/* Mantém o cabeçalho do questionário visível durante as respostas */
+/* Cabeçalho fixo do questionário integrado à barra principal */
+.quiz-top-status{
+  display:none;
+  flex:1;
+  max-width:860px;
+  margin:0 28px;
+}
+
+body.quiz-mode .topbar{
+  height:104px;
+  align-items:center;
+}
+
+body.quiz-mode .quiz-top-status{
+  display:block;
+}
+
+body.quiz-mode .topbar-note{
+  display:none;
+}
+
+.quiz-top-main{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:16px;
+}
+
+.quiz-top-main>div{
+  display:flex;
+  align-items:baseline;
+  gap:12px;
+  min-width:0;
+}
+
+.quiz-top-main .eyebrow{
+  margin:0;
+  font-size:9px;
+  white-space:nowrap;
+}
+
+#question-counter{
+  font-family:'Playfair Display',serif;
+  font-size:25px;
+  line-height:1;
+  white-space:nowrap;
+}
+
+.quiz-top-status .progress-track{
+  height:6px;
+  margin:10px 0 0;
+}
+
 #quiz .quiz-shell{
-  padding-top:0;
-}
-
-#quiz .quiz-head{
-  position:sticky;
-  top:74px;
-  z-index:18;
-  background:rgba(244,241,234,.97);
-  backdrop-filter:blur(12px);
-  padding:18px 0 12px;
-  border-bottom:1px solid rgba(23,58,59,.08);
-}
-
-#quiz .progress-track{
-  position:sticky;
-  top:153px;
-  z-index:19;
-  margin:0 0 22px;
-  background:#dde3df;
-  box-shadow:0 8px 18px rgba(23,58,59,.05);
+  padding-top:28px;
+  max-width:900px;
 }
 
 #quiz .question-card{
-  scroll-margin-top:180px;
+  scroll-margin-top:120px;
 }
 
-@media(max-width:800px){
-  #quiz .quiz-head{
-    top:74px;
-    padding:12px 0 10px;
-    align-items:center;
+@media(max-width:900px){
+  body.quiz-mode .topbar{
+    height:112px;
+    padding:0 16px;
   }
-  #quiz .quiz-head h2{
-    font-size:25px;
-    margin-top:4px;
+
+  body.quiz-mode .brand strong{
+    display:none;
   }
-  #quiz .quiz-head .eyebrow{
-    font-size:9px;
+
+  .quiz-top-status{
+    margin:0 12px;
   }
-  #quiz .quiz-head .btn{
-    padding:10px 12px;
+
+  .quiz-top-main>div{
+    display:block;
+  }
+
+  #question-counter{
+    display:block;
+    margin-top:3px;
+    font-size:21px;
+  }
+
+  .quiz-top-main .btn{
+    padding:9px 11px;
     font-size:12px;
   }
-  #quiz .progress-track{
-    top:137px;
-    margin-bottom:14px;
+
+  #quiz .quiz-shell{
+    padding-top:18px;
+  }
+}
+
+@media(max-width:560px){
+  body.quiz-mode .topbar{
+    height:118px;
+  }
+
+  body.quiz-mode .brand{
+    display:none;
+  }
+
+  .quiz-top-status{
+    margin:0;
+    width:100%;
+    max-width:none;
+  }
+
+  #question-counter{
+    font-size:20px;
+  }
+
+  .quiz-top-status .progress-track{
+    margin-top:8px;
   }
 }
