@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Questionário de temperamento para autoconhecimento inspirado em dimensões de personalidade de Eysenck." />
+  <title>Temperamentos — Dossiê de Autoconhecimento</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#" aria-label="Início"><span>T.</span><strong>Temperamentos</strong></a>
+    <div class="topbar-note">Autoconhecimento · não diagnóstico</div>
+  </header>
+
+  <main>
+    <section id="intro" class="screen active">
+      <div class="hero shell">
+        <div class="hero-copy">
+          <span class="eyebrow">DOSSIÊ PESSOAL</span>
+          <h1>Entenda como você reage, decide e se relaciona.</h1>
+          <p class="lead">Um questionário de 68 afirmações que organiza tendências em eixos de energia social, intensidade emocional e facetas complementares de comportamento.</p>
+          <div class="notice"><strong>Importante:</strong> este instrumento é destinado a autorreflexão e entretenimento. Não constitui avaliação psicológica, diagnóstico ou tratamento.</div>
+        </div>
+        <form id="profile-form" class="profile-card">
+          <h2>Antes de começar</h2>
+          <label>Nome completo<input id="full-name" type="text" autocomplete="name" required placeholder="Seu nome" /></label>
+          <label>Idade<input id="age" type="number" min="16" max="100" required placeholder="Ex.: 43" /></label>
+          <label class="consent"><input id="consent" type="checkbox" required /> <span>Entendo que o resultado descreve tendências de autoconhecimento, não um diagnóstico clínico.</span></label>
+          <button class="btn primary" type="submit">Começar questionário</button>
+          <small>Tempo estimado: 8–12 minutos.</small>
+        </form>
+      </div>
+    </section>
+
+    <section id="quiz" class="screen">
+      <div class="quiz-shell shell">
+        <div class="quiz-head">
+          <div><span class="eyebrow">QUESTIONÁRIO</span><h2 id="question-counter">Pergunta 1 de 68</h2></div>
+          <button id="back-to-start" class="btn ghost" type="button">Reiniciar</button>
+        </div>
+        <div class="progress-track"><div id="progress-bar" class="progress-bar"></div></div>
+        <article class="question-card">
+          <span id="question-dimension" class="question-tag"></span>
+          <h3 id="question-text"></h3>
+          <p>Escolha a opção que melhor representa como você costuma agir na maior parte do tempo.</p>
+          <div id="answer-options" class="answer-grid"></div>
+        </article>
+        <div class="quiz-footer"><button id="prev-question" class="btn secondary" type="button">Anterior</button><span id="answered-count">0 respondidas</span></div>
+      </div>
+    </section>
+
+    <section id="result" class="screen">
+      <div class="shell result-actions no-print">
+        <button id="restart" class="btn secondary" type="button">Refazer teste</button>
+        <button id="download-pdf" class="btn primary" type="button">Baixar relatório em PDF</button>
+      </div>
+      <div id="report" class="report shell"></div>
+    </section>
+  </main>
+
+  <footer class="site-footer">Projeto de autoconhecimento inspirado em dimensões de personalidade associadas a Eysenck. Não é instrumento psicológico validado.</footer>
+  <script src="app.js"></script>
+</body>
+</html>
