@@ -1,0 +1,50 @@
+/* Mantém o cabeçalho do questionário visível durante as respostas */
+#quiz .quiz-shell{
+  padding-top:0;
+}
+
+#quiz .quiz-head{
+  position:sticky;
+  top:74px;
+  z-index:18;
+  background:rgba(244,241,234,.97);
+  backdrop-filter:blur(12px);
+  padding:18px 0 12px;
+  border-bottom:1px solid rgba(23,58,59,.08);
+}
+
+#quiz .progress-track{
+  position:sticky;
+  top:153px;
+  z-index:19;
+  margin:0 0 22px;
+  background:#dde3df;
+  box-shadow:0 8px 18px rgba(23,58,59,.05);
+}
+
+#quiz .question-card{
+  scroll-margin-top:180px;
+}
+
+@media(max-width:800px){
+  #quiz .quiz-head{
+    top:74px;
+    padding:12px 0 10px;
+    align-items:center;
+  }
+  #quiz .quiz-head h2{
+    font-size:25px;
+    margin-top:4px;
+  }
+  #quiz .quiz-head .eyebrow{
+    font-size:9px;
+  }
+  #quiz .quiz-head .btn{
+    padding:10px 12px;
+    font-size:12px;
+  }
+  #quiz .progress-track{
+    top:137px;
+    margin-bottom:14px;
+  }
+}
