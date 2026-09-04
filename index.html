@@ -17,6 +17,18 @@
 <body>
   <header class="topbar">
     <a class="brand" href="#" aria-label="Início"><span>T.</span><strong>Temperamentos</strong></a>
+
+    <div class="quiz-top-status" aria-live="polite">
+      <div class="quiz-top-main">
+        <div>
+          <span class="eyebrow">QUESTIONÁRIO</span>
+          <strong id="question-counter">Pergunta 1 de 54</strong>
+        </div>
+        <button id="back-to-start" class="btn ghost" type="button">Reiniciar</button>
+      </div>
+      <div class="progress-track"><div id="progress-bar" class="progress-bar"></div></div>
+    </div>
+
     <div class="topbar-note">Autoconhecimento · perspectiva cristã · não diagnóstico</div>
   </header>
 
@@ -43,11 +55,6 @@
 
     <section id="quiz" class="screen">
       <div class="quiz-shell shell">
-        <div class="quiz-head">
-          <div><span class="eyebrow">QUESTIONÁRIO</span><h2 id="question-counter">Pergunta 1 de 54</h2></div>
-          <button id="back-to-start" class="btn ghost" type="button">Reiniciar</button>
-        </div>
-        <div class="progress-track"><div id="progress-bar" class="progress-bar"></div></div>
         <article class="question-card">
           <span id="question-dimension" class="question-tag"></span>
           <h3 id="question-text"></h3>
