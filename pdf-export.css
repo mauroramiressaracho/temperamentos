@@ -1,0 +1,192 @@
+/* Layout exclusivo da exportação em PDF. Não interfere na página normal. */
+#pdf-render-stage{
+  position:fixed;
+  left:-20000px;
+  top:0;
+  width:794px;
+  z-index:-1;
+  pointer-events:none;
+}
+.pdf-sheet{
+  width:794px;
+  height:1123px;
+  overflow:hidden;
+  position:relative;
+  box-sizing:border-box;
+  background:#f4f1ea;
+  color:#173a3b;
+  padding:78px 52px 62px;
+  font-family:'DM Sans',Arial,sans-serif;
+}
+.pdf-sheet.pdf-cover-sheet{
+  padding:0;
+  background:#173a3b;
+}
+.pdf-sheet .pdf-header{
+  position:absolute;
+  top:28px;
+  left:52px;
+  right:52px;
+  height:30px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  border-bottom:1px solid rgba(23,58,59,.16);
+  padding-bottom:10px;
+  color:#66706d;
+  font-size:10px;
+  font-weight:700;
+  letter-spacing:.11em;
+  text-transform:uppercase;
+}
+.pdf-sheet .pdf-footer{
+  position:absolute;
+  bottom:22px;
+  left:52px;
+  right:52px;
+  display:flex;
+  justify-content:space-between;
+  gap:18px;
+  color:#7c8582;
+  font-size:9px;
+  line-height:1.35;
+}
+.pdf-sheet .pdf-footer span:first-child{max-width:560px}
+.pdf-sheet .report-cover{
+  width:100%;
+  height:1123px;
+  min-height:1123px;
+  margin:0;
+  border-radius:0;
+  padding:74px 64px 62px;
+  box-shadow:none;
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+  background:#173a3b;
+  color:#fff;
+}
+.pdf-sheet .report-cover .eyebrow{
+  display:block;
+  margin-bottom:18px;
+  font-size:11px;
+  letter-spacing:.22em;
+}
+.pdf-sheet .report-cover h1{
+  font-family:'Playfair Display',Georgia,serif;
+  font-size:72px;
+  line-height:.96;
+  margin:0 0 28px;
+  max-width:650px;
+  overflow-wrap:anywhere;
+}
+.pdf-sheet .report-cover h1 span{
+  display:block;
+  margin-top:18px;
+  font-size:29px !important;
+  line-height:1.15;
+  font-family:'DM Sans',Arial,sans-serif !important;
+  font-weight:600;
+}
+.pdf-sheet .report-cover p{
+  max-width:620px;
+  margin:0;
+  color:#dbe5e1;
+  font-size:17px;
+  line-height:1.62;
+}
+.pdf-sheet .cover-meta{
+  padding-top:22px;
+  border-top:1px solid rgba(255,255,255,.17);
+  display:grid;
+  grid-template-columns:1fr auto auto auto;
+  gap:14px;
+  align-items:center;
+  color:#c7d4cf;
+  font-size:11px;
+}
+.pdf-sheet .cover-meta span:first-child{
+  font-weight:700;
+  color:#fff;
+  overflow-wrap:anywhere;
+}
+.pdf-sheet .report-grid{
+  width:100%;
+  margin:0;
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:14px;
+  align-content:start;
+  break-before:auto !important;
+  page-break-before:auto !important;
+}
+.pdf-sheet .report-card{
+  min-width:0;
+  padding:20px 21px;
+  border-radius:15px;
+  border:1px solid rgba(23,58,59,.11);
+  box-shadow:none;
+  background:#fffdf8;
+  break-inside:avoid;
+  page-break-inside:avoid;
+}
+.pdf-sheet .report-card.full{grid-column:1/-1}
+.pdf-sheet .report-card h2,
+.pdf-sheet .report-card h3{
+  font-family:'Playfair Display',Georgia,serif;
+  color:#173a3b;
+  overflow-wrap:anywhere;
+}
+.pdf-sheet .report-card h2{
+  font-size:26px;
+  line-height:1.08;
+  margin:0 0 15px;
+}
+.pdf-sheet .report-card h3{
+  font-size:20px;
+  line-height:1.12;
+  margin:10px 0 11px;
+}
+.pdf-sheet .report-card p,
+.pdf-sheet .report-card li{
+  color:#485754;
+  font-size:11.5px;
+  line-height:1.55;
+}
+.pdf-sheet .report-card p{margin:0 0 10px}
+.pdf-sheet .report-card p:last-child{margin-bottom:0}
+.pdf-sheet .report-card ul,
+.pdf-sheet .report-card ol{margin:8px 0 0;padding-left:20px}
+.pdf-sheet .report-card li+li{margin-top:4px}
+.pdf-sheet .quadrant{gap:8px}
+.pdf-sheet .temper-card{
+  padding:12px;
+  border-radius:11px;
+}
+.pdf-sheet .temper-card strong{
+  font-size:17px;
+  line-height:1.12;
+  margin:3px 0;
+}
+.pdf-sheet .temper-card small,
+.pdf-sheet .temper-card span{font-size:9.5px}
+.pdf-sheet .score-list{gap:11px}
+.pdf-sheet .score-row{
+  grid-template-columns:112px 1fr 30px;
+  gap:9px;
+  font-size:10.5px;
+}
+.pdf-sheet .bar{height:7px}
+.pdf-sheet .pill{
+  padding:5px 8px;
+  font-size:9px;
+}
+.pdf-sheet .quote{
+  margin-top:14px !important;
+  padding-left:13px;
+  border-left-width:3px;
+  font-size:10.5px !important;
+}
+@media print{
+  @page{size:A4 portrait;margin:0}
+}
